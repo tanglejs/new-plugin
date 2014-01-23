@@ -1,5 +1,4 @@
 # tangle-new-plugin
-[![Build Status](https://secure.travis-ci.org/tanglejs/tangle-new-plugin.png?branch=master)](http://travis-ci.org/tanglejs/tangle-new-plugin)
 
 > A tangle plugin for creating new tangle plugins
 

@@ -52,8 +52,8 @@ module.exports = (grunt) ->
           table_of_contents: false
           generate_footer: false
           has_travis: false
-          package_title: 'tangle-new'
-          package_name: 'tangle-new'
+          package_title: 'tangle-new-plugin'
+          package_name: 'tangle-new-plugin'
         order:
           'usage.md': 'Usage'
       readme:

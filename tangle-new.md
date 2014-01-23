@@ -1,4 +1,4 @@
-# tangle-new 
+# tangle-new-plugin 
 
 > A tangle plugin for creating new tangle plugins
 
