@@ -1,4 +1,4 @@
-# <%= app.name %>
+# tangle-<%= app.name %>
 
 > <%= app.description %>
 
