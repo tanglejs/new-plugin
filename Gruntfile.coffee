@@ -48,7 +48,7 @@ module.exports = (grunt) ->
     readme_generator:
       help:
         options:
-          output: 'tangle-new.md'
+          output: 'tangle-new-plugin.md'
           table_of_contents: false
           generate_footer: false
           has_travis: false
@@ -93,12 +93,12 @@ module.exports = (grunt) ->
     done = @async()
     grunt.util.spawn
       cmd: './marked-man'
-      args: [path.join(__dirname, 'tangle-new.md')]
+      args: [path.join(__dirname, 'tangle-new-plugin.md')]
       opts:
         cwd: path.join(__dirname, 'node_modules', 'marked-man', 'bin')
     , (error, result, code) ->
       throw error if error
-      out = path.join __dirname, 'man', 'tangle-new.1'
+      out = path.join __dirname, 'man', 'tangle-new-plugin.1'
       grunt.file.write out, result.stdout
       done()
 

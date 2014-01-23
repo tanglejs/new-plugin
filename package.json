@@ -8,7 +8,7 @@
     "doc": "readme"
   },
   "bin": {
-    "tangle-new": "./bin/tangle-new-plugin"
+    "tangle-new-plugin": "./bin/tangle-new-plugin"
   },
   "scripts": {
     "test": "grunt test"
