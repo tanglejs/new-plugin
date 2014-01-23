@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+path = require('path');
+helpers = require('yeoman-generator').test;
+
+exports.command = {
+  description: 'Create a tangle plugin in cwd',
+};
+
+if (require.main === module) {
+  generator = path.join(__dirname, '..', 'app');
+  var app = helpers.createGenerator('tangle:plugin', [[generator, 'tangle:plugin']]);
+  app.run();
+}

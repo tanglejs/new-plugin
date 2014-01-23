@@ -1,0 +1,63 @@
+{
+  "name": "<%= app.name %>",
+  "version": "<%= app.version %>",
+  "description": "<%= app.description %>",
+  "main": "index.js",
+  "directories": {
+    "man": "man",
+    "doc": "readme",
+    "lib": "lib"
+  },
+  "bin": {
+    "tangle-<%= app.subcommand %>": "./bin/tangle-<%= app.subcommand %>"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "preferGlobal": true,
+  "author": {
+    "name": "<%= author.name %>",
+    "email": "<%= author.email %>",
+    "url": "<%= author.url %>"
+  },
+  "dependencies": {
+    "nopt": "~2.1.2",
+    "nconf": "~0.6.8",
+    "tangle-config": "~0.0.0",
+    "nodemock": "~0.2.17"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-bump": "0.0.11",
+    "nixt": "0.0.1",
+    "grunt-contrib-nodeunit": "~0.2.2",
+    "grunt-readme-generator": "~0.3.41",
+    "marked-man": "0.0.2",
+    "marked": "~0.2.10",
+    "grunt-contrib-copy": "~0.4.1"
+  },
+  "keywords": [
+    "tangle",
+    "tangle-plugin"
+  ],
+  "homepage": "https://github.com/<%= author.github %>/<%= app.name %>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/<%= author.github %>/<%= app.name %>.git"
+  },
+  "bugs": {
+    "url": "https://github.com/<%= author.github %>/<%= app.name %>/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/<%= author.github %>/<%= app.name %>/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.10.0"
+  }
+}

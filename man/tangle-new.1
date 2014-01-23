@@ -1,0 +1,37 @@
+.TH "TANGLE\-NEW" "" "January 2014" "" ""
+.SH "NAME"
+\fBtangle-new\fR
+.QP
+.P
+A tangle plugin for creating new tangle plugins
+
+.
+.SH Usage
+.SS Creating your plugin
+.P
+.RS 2
+.EX
+$ mkdir tangle\-myplugin
+$ cd tangle\-myplugin
+
+$ tangle new\-plugin
+# \.\.\.
+.EE
+.RE
+.SS Editing your plugin
+.P
+.RS 2
+.EX
+$ npm link
+$ grunt watch # Automatically rebuild & test on file change events
+.EE
+.RE
+.SS Publishing your plugin
+.P
+.RS 2
+.EX
+$ npm publish
+$ npm unlink
+$ npm install tangle\-myplugin \-g
+.EE
+.RE
