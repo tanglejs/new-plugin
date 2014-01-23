@@ -1,3 +1,5 @@
+conf = require('tangle-config').getConf()
+
 module.exports.prompt =  ->
   done = @async()
 
@@ -5,26 +7,26 @@ module.exports.prompt =  ->
     type: 'input'
     name: 'name'
     message: 'Your name'
-    #default: =>
-    #  @config.get('user.name')
+    default: =>
+      conf.get 'user:name'
   ,
     type: 'input'
     name: 'email'
     message: 'Your email'
-    #default: =>
-    #  @config.get('user.email')
+    default: =>
+      conf.get 'user:email'
   ,
     type: 'input'
     name: 'url'
     message: 'Your homepage'
-    #default: =>
-    #  @config.get('user.url')
+    default: =>
+      conf.get 'user:url'
   ,
     type: 'input'
     name: 'github'
     message: 'Github username'
-    #default: =>
-    #  @config.get('user.github.username')
+    default: =>
+      conf.get 'user:github:username'
   ]
 
   @prompt prompts, (props) =>

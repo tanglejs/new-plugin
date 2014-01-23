@@ -3,7 +3,7 @@ path = require('path');
 helpers = require('yeoman-generator').test;
 
 exports.command = {
-  description: 'Create a tangle plugin in cwd',
+  description: 'Create a tangle plugin in cwd'
 };
 
 if (require.main === module) {

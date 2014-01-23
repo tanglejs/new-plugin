@@ -7,6 +7,18 @@ A tangle plugin for creating new tangle plugins
 
 .
 .SH Usage
+.SS Global configuration
+.P
+If you these config values are set, they will be used as defaults\.
+.P
+.RS 2
+.EX
+$ tangle config \-k user:name \-v "Your name"
+$ tangle config \-k user:email \-v "you@example\.com"
+$ tangle config \-k user:url \-v "http://yourhomepage\.example"
+$ tangle config \-k user:github:username \-v \'yourUsername\'
+.EE
+.RE
 .SS Creating your plugin
 .P
 .RS 2
