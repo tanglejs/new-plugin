@@ -59,15 +59,16 @@
     this.copy('_LICENSE-MIT', 'LICENSE-MIT');
     this.copy('_package.json', 'package.json');
     this.copy('_Gruntfile.coffee', 'Gruntfile.coffee');
-    this.copy('_index.coffee', "src/index.coffee");
+    this.copy('_index.coffee', 'src/index.coffee');
     this.copy('_index_test.coffee', 'src/tests/index_test.coffee');
     this.copy('_config_file', 'src/tests/config_file');
     this.copy('_subcommand', "bin/tangle-" + this.app.subcommand);
-    this.copy('readme/_contributing.md', "readme/contributing.md");
-    this.copy('readme/_examples.md', "readme/examples.md");
-    this.copy('readme/_license.md', "readme/license.md");
-    this.copy('readme/_overview.md', "readme/overview.md");
-    return this.copy('readme/_usage.md', "readme/usage.md");
+    this.copy('readme/_contributing.md', 'readme/contributing.md');
+    this.copy('readme/_examples.md', 'readme/examples.md');
+    this.copy('readme/_license.md', 'readme/license.md');
+    this.copy('readme/_overview.md', 'readme/overview.md');
+    this.copy('readme/_usage.md', 'readme/usage.md');
+    return this.copy('readme/_banner.md', 'readme/banner.md');
   };
 
 }).call(this);

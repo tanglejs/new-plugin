@@ -59,6 +59,9 @@ module.exports = (grunt) ->
           'examples.md': 'Examples'
       readme:
         options:
+          banner: 'banner.md'
+          generate_title: false
+          has_travis: false
           github_username: '<%= author.github %>'
           generate_footer: false
           table_of_contents: false

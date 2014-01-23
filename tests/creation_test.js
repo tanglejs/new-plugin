@@ -18,7 +18,7 @@
     });
     return it('creates expected files', function(done) {
       var expected;
-      expected = ['.gitignore', '.editorconfig', '.travis.yml', 'package.json', 'Gruntfile.coffee', 'LICENSE-MIT', 'bin/tangle-test', 'src/index.coffee', 'src/tests/index_test.coffee', 'src/tests/config_file', 'readme/contributing.md', 'readme/examples.md', 'readme/license.md', 'readme/overview.md', 'readme/usage.md'];
+      expected = ['.gitignore', '.editorconfig', '.travis.yml', 'package.json', 'Gruntfile.coffee', 'LICENSE-MIT', 'bin/tangle-test', 'src/index.coffee', 'src/tests/index_test.coffee', 'src/tests/config_file', 'readme/contributing.md', 'readme/examples.md', 'readme/license.md', 'readme/overview.md', 'readme/usage.md', 'readme/banner.md'];
       helpers.mockPrompt(this.app, {
         name: 'tangle-test-plugin',
         version: '0.1.0',

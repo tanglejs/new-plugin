@@ -31,7 +31,8 @@ describe 'generator', ->
       'readme/examples.md',
       'readme/license.md',
       'readme/overview.md',
-      'readme/usage.md'
+      'readme/usage.md',
+      'readme/banner.md'
     ]
     helpers.mockPrompt @app,
       name: 'tangle-test-plugin'

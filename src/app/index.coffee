@@ -47,12 +47,13 @@ PluginGenerator::copyFiles = ->
   @copy '_LICENSE-MIT', 'LICENSE-MIT'
   @copy '_package.json', 'package.json'
   @copy '_Gruntfile.coffee', 'Gruntfile.coffee'
-  @copy '_index.coffee', "src/index.coffee"
+  @copy '_index.coffee', 'src/index.coffee'
   @copy '_index_test.coffee', 'src/tests/index_test.coffee'
   @copy '_config_file', 'src/tests/config_file'
   @copy '_subcommand', "bin/tangle-#{@app.subcommand}"
-  @copy 'readme/_contributing.md', "readme/contributing.md"
-  @copy 'readme/_examples.md', "readme/examples.md"
-  @copy 'readme/_license.md', "readme/license.md"
-  @copy 'readme/_overview.md', "readme/overview.md"
-  @copy 'readme/_usage.md', "readme/usage.md"
+  @copy 'readme/_contributing.md', 'readme/contributing.md'
+  @copy 'readme/_examples.md', 'readme/examples.md'
+  @copy 'readme/_license.md', 'readme/license.md'
+  @copy 'readme/_overview.md', 'readme/overview.md'
+  @copy 'readme/_usage.md', 'readme/usage.md'
+  @copy 'readme/_banner.md', 'readme/banner.md'
