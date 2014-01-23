@@ -12,11 +12,6 @@
 [![NPM](https://nodei.co/npm/tangle-new-plugin.png?downloads=true)](https://nodei.co/npm/tangle-new-plugin/)
 
 
-# tangle-new-plugin 
-[![Build Status](https://secure.travis-ci.org/tanglejs/tangle-new-plugin.png?branch=master)](http://travis-ci.org/tanglejs/tangle-new-plugin)
-
-> A tangle plugin for creating new tangle plugins
-
 ## Overview
 
 [tangle](https://github.com/tanglejs/tangle) is a set of tools
