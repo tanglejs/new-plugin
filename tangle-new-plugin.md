@@ -6,7 +6,7 @@
 
 ### Global configuration
 
-If you these config values are set, they will be used as defaults.
+If these config values are set, they will be used as defaults.
 
     $ tangle config -k user:name -v "Your name"
     $ tangle config -k user:email -v "you@example.com"
