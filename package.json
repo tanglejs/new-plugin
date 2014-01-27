@@ -1,6 +1,6 @@
 {
   "name": "tangle-new-plugin",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A tangle plugin for creating new tangle plugins",
   "main": "app/index.js",
   "directories": {
