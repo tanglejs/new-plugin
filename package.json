@@ -20,7 +20,8 @@
     "url": "https://github.com/logankoester"
   },
   "dependencies": {
-    "yeoman-generator": "~0.13.0"
+    "yeoman-generator": "~0.13.0",
+    "tangle-config": "~0.1.0"
   },
   "devDependencies": {
     "mocha": "~1.12.0",
