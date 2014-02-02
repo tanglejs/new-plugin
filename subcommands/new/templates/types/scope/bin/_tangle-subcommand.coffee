@@ -7,4 +7,4 @@ exports.command =
   arguments: null # Optional arguments string to display
 
 if require.main is module
-  require path.join(__dirname, '..', 'index.coffee')
+  require path.join(__dirname, '..')

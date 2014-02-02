@@ -49,17 +49,19 @@ PluginGenerator::copyFiles = ->
   @copy 'travis.yml', '.travis.yml'
   @copy '_package.json', 'package.json'
   @copy '_Gruntfile.coffee', 'Gruntfile.coffee'
-  @copy 'bin/_tangle-subcommand.coffee', "bin/tangle-#{@plugin.subcommand}.coffee"
 
   switch @plugin.type
     when 'scope'
       @copy 'types/scope/_index.coffee', 'index.coffee'
+      @copy 'types/scope/bin/_tangle-subcommand.coffee', "bin/tangle-#{@plugin.subcommand}.coffee"
     when 'generator'
       @mkdir 'templates'
       @copy 'types/generator/_index.coffee', 'index.coffee'
       @copy 'types/generator/templates/_hello.txt', 'templates/_hello.txt'
+      @copy 'types/generator/bin/_tangle-subcommand.coffee', "bin/tangle-#{@plugin.subcommand}.coffee"
     when 'runner'
       @copy 'types/runner/_index.coffee', 'index.coffee'
+      @copy 'types/runner/bin/_tangle-subcommand.coffee', "bin/tangle-#{@plugin.subcommand}.coffee"
 
 PluginGenerator::copyDocs = ->
   @copy '_LICENSE-MIT', 'LICENSE-MIT'
