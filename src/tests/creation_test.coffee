@@ -9,7 +9,7 @@ describe 'generator', ->
     helpers.testDirectory path.join(__dirname, 'tmp'), (err) =>
       return done(err) if err
       @app = helpers.createGenerator('tangle:plugin', [
-        ['../../app', 'tangle:plugin']
+        [require('../app/index.js'), 'tangle:plugin']
       ])
       done()
 

@@ -7,14 +7,15 @@
 
   describe('generator', function() {
     beforeEach(function(done) {
-      var _this = this;
-      return helpers.testDirectory(path.join(__dirname, 'tmp'), function(err) {
-        if (err) {
-          return done(err);
-        }
-        _this.app = helpers.createGenerator('tangle:plugin', [['../../app', 'tangle:plugin']]);
-        return done();
-      });
+      return helpers.testDirectory(path.join(__dirname, 'tmp'), (function(_this) {
+        return function(err) {
+          if (err) {
+            return done(err);
+          }
+          _this.app = helpers.createGenerator('tangle:plugin', [[require('../app/index.js'), 'tangle:plugin']]);
+          return done();
+        };
+      })(this));
     });
     return it('creates expected files', function(done) {
       var expected;
