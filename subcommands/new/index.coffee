@@ -42,7 +42,6 @@ PluginGenerator::copyFiles = ->
   @mkdir 'bin'
   @mkdir 'readme'
   @mkdir 'node_modules'
-  @mkdir 'subcommands'
   @mkdir 'tests'
   @copy 'gitignore', '.gitignore'
   @copy 'editorconfig', '.editorconfig'
@@ -52,6 +51,7 @@ PluginGenerator::copyFiles = ->
 
   switch @plugin.type
     when 'scope'
+      @mkdir 'subcommands'
       @copy 'types/scope/_index.coffee', 'index.coffee'
       @copy 'types/scope/bin/_tangle-subcommand.coffee', "bin/tangle-#{@plugin.subcommand}.coffee"
     when 'generator'
