@@ -11,7 +11,7 @@ module.exports = class PluginGenerator extends yeoman.generators.Base
     @sourceRoot path.join __dirname, 'templates'
 
     @on 'end', ->
-      require('fs').chmodSync "bin/tangle-#{@plugin.subcommand}", '1755'
+      require('fs').chmodSync "bin/tangle-#{@plugin.subcommand}.coffee", '1755'
       @installDependencies npm: true
 
       console.log "Next steps...\n"
@@ -39,16 +39,16 @@ PluginGenerator::authorPrompts = require('./prompts/author').prompt
 PluginGenerator::copyFiles = ->
   @mkdir 'bin'
   @mkdir 'readme'
-  @mkdir 'src/tests'
+  @mkdir 'node_modules'
+  @mkdir 'subcommands'
+  @mkdir 'tests'
   @copy 'gitignore', '.gitignore'
   @copy 'editorconfig', '.editorconfig'
   @copy 'travis.yml', '.travis.yml'
   @copy '_package.json', 'package.json'
   @copy '_Gruntfile.coffee', 'Gruntfile.coffee'
   @copy '_index.coffee', 'src/index.coffee'
-  @copy '_index_test.coffee', 'src/tests/index_test.coffee'
-  @copy '_config_file', 'src/tests/config_file'
-  @copy '_subcommand', "bin/tangle-#{@plugin.subcommand}"
+  @copy 'bin/_tangle-subcommand.coffee', "bin/tangle-#{@plugin.subcommand}.coffee"
 
 PluginGenerator::copyDocs = ->
   @copy '_LICENSE-MIT', 'LICENSE-MIT'

@@ -1,5 +1,5 @@
 node_modules/
+tests/tmp
 *.swp
 *.swo
 *.swn
-tests/tmp/

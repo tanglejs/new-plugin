@@ -1,6 +1,6 @@
 # tangle-new-plugin 
 
-> A tangle plugin for creating new tangle plugins
+> A tangle plugin for managing tangle plugins
 
 ## Usage
 

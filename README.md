@@ -2,7 +2,7 @@
 
 > A tangle plugin for creating new tangle plugins
 
-[![Strider Build Status](https://ci.ldk.io/tanglejs/new-plugin/badge)](https://ci.ldk.io/tanglejs/new-plugin/)
+[![Strider Build Status](http://ci.ldk.io/tanglejs/new-plugin/badge)](https://ci.ldk.io/tanglejs/new-plugin/)
 [![Travis Build Status](https://secure.travis-ci.org/tanglejs/new-plugin.png?branch=master)](http://travis-ci.org/tanglejs/new-plugin)
 [![Dependency Status](https://david-dm.org/tanglejs/new-plugin.png)](https://david-dm.org/tanglejs/new-plugin)
 [![devDependency Status](https://david-dm.org/tanglejs/new-plugin/dev-status.png)](https://david-dm.org/tanglejs/new-plugin#info=devDependencies)

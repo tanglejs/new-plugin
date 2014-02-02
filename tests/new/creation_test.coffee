@@ -10,7 +10,7 @@ asyncStub =
 describe 'generator', ->
 
   beforeEach (done) ->
-    helpers.testDirectory path.join(__dirname, 'tmp'), (err) =>
+    helpers.testDirectory path.join(__dirname, '..', 'tmp'), (err) =>
       return done(err) if err
       @plugin = helpers.createGenerator('tangle:plugin', [
         [require('../../subcommands/new'), 'tangle:plugin']
@@ -25,7 +25,8 @@ describe 'generator', ->
 
   it 'installs npm dependencies', (done) ->
     @plugin.installDependencies =>
-      assert.deepEqual(@commandsRun, [['npm', ['install']]])
+      console.log @commandsRun
+      assert.deepEqual(@commandsRun, [['bower', ['install']], ['npm', ['install']]])
       done()
 
   describe 'output', ->
@@ -44,24 +45,22 @@ describe 'generator', ->
     it 'includes expected files', (done) ->
       # add files you expect to exist here.
       expected = [
-        '.gitignore',
-        '.editorconfig',
-        '.travis.yml',
-        'package.json',
-        'Gruntfile.coffee',
-        'LICENSE-MIT',
-        'bin/tangle-test',
-        'src/index.coffee',
-        'src/tests/index_test.coffee',
-        'src/tests/config_file',
-        'readme/contributing.md',
-        'readme/examples.md',
-        'readme/license.md',
-        'readme/overview.md',
-        'readme/usage.md',
+        '.gitignore'
+        '.editorconfig'
+        '.travis.yml'
+        'package.json'
+        'Gruntfile.coffee'
+        'LICENSE-MIT'
+        'bin/tangle-stubplugin.coffee'
+        'src/index.coffee'
+        'readme/contributing.md'
+        'readme/examples.md'
+        'readme/license.md'
+        'readme/overview.md'
+        'readme/usage.md'
         'readme/banner.md'
       ]
 
-    @plugin.run {}, ->
-      helpers.assertFiles expected
-      done()
+      @plugin.run {}, ->
+        helpers.assertFiles expected
+        done()
