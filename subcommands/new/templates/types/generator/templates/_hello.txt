@@ -1,0 +1,1 @@
+<%= '@settings.<%= ' + _.underscored(plugin.subcommand) + ':greeting %>' %>, plugin!

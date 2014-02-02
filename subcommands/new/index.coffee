@@ -1,6 +1,7 @@
-util = require 'util'
 path = require 'path'
 yeoman = require 'yeoman-generator'
+_ = require 'lodash'
+_.str = require 'underscore.string'
 
 module.exports = class PluginGenerator extends yeoman.generators.Base
   constructor: (args, options, config) ->
@@ -48,8 +49,17 @@ PluginGenerator::copyFiles = ->
   @copy 'travis.yml', '.travis.yml'
   @copy '_package.json', 'package.json'
   @copy '_Gruntfile.coffee', 'Gruntfile.coffee'
-  @copy '_index.coffee', 'index.coffee'
   @copy 'bin/_tangle-subcommand.coffee', "bin/tangle-#{@plugin.subcommand}.coffee"
+
+  switch @plugin.type
+    when 'scope'
+      @copy 'types/scope/_index.coffee', 'index.coffee'
+    when 'generator'
+      @mkdir 'templates'
+      @copy 'types/generator/_index.coffee', 'index.coffee'
+      @copy 'types/generator/templates/_hello.txt', 'templates/_hello.txt'
+    when 'runner'
+      @copy 'types/runner/_index.coffee', 'index.coffee'
 
 PluginGenerator::copyDocs = ->
   @copy '_LICENSE-MIT', 'LICENSE-MIT'

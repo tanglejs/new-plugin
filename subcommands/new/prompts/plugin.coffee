@@ -11,6 +11,15 @@ module.exports.prompt =  ->
       path.basename( process.cwd() )
   ,
     type: 'input'
+    name: 'plugin:subcommand'
+    message: 'subcommand'
+  ,
+    type: 'list'
+    name: 'plugin:type'
+    message: 'type'
+    choices: ['runner', 'generator', 'scope']
+  ,
+    type: 'input'
     name: 'plugin:version'
     message: 'Current version'
     default: '0.0.0'
@@ -18,10 +27,6 @@ module.exports.prompt =  ->
     type: 'input'
     name: 'plugin:description'
     message: 'Description'
-  ,
-    type: 'input'
-    name: 'plugin:subcommand'
-    message: 'subcommand'
   ]
 
   @prompt prompts, (props) =>
@@ -30,4 +35,5 @@ module.exports.prompt =  ->
       version: props['plugin:version']
       description: props['plugin:description']
       subcommand: props['plugin:subcommand']
+      type: props['plugin:type']
     done()

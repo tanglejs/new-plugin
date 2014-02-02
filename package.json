@@ -23,7 +23,9 @@
   "dependencies": {
     "tangle-config": "~0.1.0",
     "helmsman": "git://github.com/logankoester/node-helmsman#path-and-non-js",
-    "yeoman-generator": "~0.16.0"
+    "yeoman-generator": "~0.16.0",
+    "underscore.string": "~2.3.3",
+    "lodash": "~2.4.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
