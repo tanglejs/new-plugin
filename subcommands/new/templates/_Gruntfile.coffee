@@ -13,37 +13,28 @@ module.exports = (grunt) ->
   # Project configuration.
   grunt.initConfig
     pkg: grunt.file.readJSON 'package.json'
-    # Coffeescript
-    coffee:
-      src:
-        expand: true
-        cwd: 'src/'
-        src: '**/*.coffee'
-        dest: '.'
-        ext: '.js'
-
-    copy:
-      src:
-        expand: true
-        cwd: 'src/tests'
-        src: 'config_file'
-        dest: 'tests/'
 
     clean:
-      lib: ['lib/', 'tests/', 'man/']
+      docs: ['man/']
+      tests: ['tests/tmp/']
 
     watch:
       all:
         files: [
-          'src/**/*.coffee',
-          'bin/**/*.coffee',
-          'Gruntfile.coffee',
+          'bin/**/*'
+          'Gruntfile.coffee'
+          'subcommands/*/templates/**/*'
+          'subcommands/**/*.coffee'
           'readme/**/*.md'
+          'tests/**/*.coffee'
+          '!tests/tmp/**/*'
         ]
         tasks: ['default']
 
-    nodeunit:
-      all: ['tests/**/*_test.js']
+    mochacli:
+      options:
+        compilers: ['coffee:coffee-script/register']
+      all: ['tests/**/*_test.coffee']
 
     readme_generator:
       help:
@@ -56,7 +47,6 @@ module.exports = (grunt) ->
           package_name: 'tangle-<%= plugin.subcommand %>'
         order:
           'usage.md': 'Usage'
-          'examples.md': 'Examples'
       readme:
         options:
           banner: 'banner.md'
@@ -68,7 +58,6 @@ module.exports = (grunt) ->
         order:
           'overview.md': 'Overview'
           'usage.md': 'Usage'
-          'examples.md': 'Examples'
           'contributing.md': 'Contributing'
           'license.md': 'License'
 
@@ -84,11 +73,9 @@ module.exports = (grunt) ->
 
   # These plugins provide necessary tasks.
   grunt.loadNpmTasks 'grunt-contrib-clean'
-  grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-watch'
-  grunt.loadNpmTasks 'grunt-contrib-copy'
-  grunt.loadNpmTasks 'grunt-contrib-nodeunit'
   grunt.loadNpmTasks 'grunt-readme-generator'
+  grunt.loadNpmTasks 'grunt-mocha-cli'
   grunt.loadNpmTasks 'grunt-bump'
 
   grunt.registerTask 'marked-man', ->
@@ -104,6 +91,6 @@ module.exports = (grunt) ->
       grunt.file.write out, result.stdout
       done()
 
-  grunt.registerTask 'build', ['clean', 'coffee', 'copy', 'readme_generator', 'marked-man']
-  grunt.registerTask 'test', ['nodeunit']
+  grunt.registerTask 'build', ['clean', 'readme_generator', 'marked-man']
+  grunt.registerTask 'test', ['mochacli']
   grunt.registerTask 'default', ['build', 'test']

@@ -20,7 +20,7 @@
     "url": "<%= author.url %>"
   },
   "dependencies": {
-    "tangle-config": "~0.0.0",
+    "tangle-config": "~0.1.0",
     "helmsman": "git://github.com/logankoester/node-helmsman#path-and-non-js",
     "yeoman-generator": "~0.16.0"
   },

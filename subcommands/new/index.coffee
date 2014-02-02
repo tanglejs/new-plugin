@@ -12,7 +12,8 @@ module.exports = class PluginGenerator extends yeoman.generators.Base
 
     @on 'end', ->
       require('fs').chmodSync "bin/tangle-#{@plugin.subcommand}.coffee", '1755'
-      @installDependencies npm: true
+      @installDependencies
+        npm: true
 
       console.log "Next steps...\n"
       console.log "Build your plugin!\n"
@@ -47,13 +48,12 @@ PluginGenerator::copyFiles = ->
   @copy 'travis.yml', '.travis.yml'
   @copy '_package.json', 'package.json'
   @copy '_Gruntfile.coffee', 'Gruntfile.coffee'
-  @copy '_index.coffee', 'src/index.coffee'
+  @copy '_index.coffee', 'index.coffee'
   @copy 'bin/_tangle-subcommand.coffee', "bin/tangle-#{@plugin.subcommand}.coffee"
 
 PluginGenerator::copyDocs = ->
   @copy '_LICENSE-MIT', 'LICENSE-MIT'
   @copy 'readme/_contributing.md', 'readme/contributing.md'
-  @copy 'readme/_examples.md', 'readme/examples.md'
   @copy 'readme/_license.md', 'readme/license.md'
   @copy 'readme/_overview.md', 'readme/overview.md'
   @copy 'readme/_usage.md', 'readme/usage.md'

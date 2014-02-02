@@ -54,7 +54,6 @@ describe 'generator', ->
         'bin/tangle-stubplugin.coffee'
         'src/index.coffee'
         'readme/contributing.md'
-        'readme/examples.md'
         'readme/license.md'
         'readme/overview.md'
         'readme/usage.md'
