@@ -1,14 +1,15 @@
 {
-  "name": "tangle-new-plugin",
+  "name": "tangle-plugin",
   "version": "0.1.0",
-  "description": "A tangle plugin for creating new tangle plugins",
-  "main": "app/index.js",
+  "description": "A tangle plugin for managing tangle plugins",
+  "main": "index.coffee",
   "directories": {
     "man": "man",
     "doc": "readme"
   },
   "bin": {
-    "tangle-new-plugin": "./bin/tangle-new-plugin"
+    "tangle-plugin": "bin/tangle-plugin.coffee",
+    "tangle-plugin-new": "bin/tangle-plugin-new.coffee"
   },
   "scripts": {
     "test": "grunt test"
@@ -20,44 +21,37 @@
     "url": "https://github.com/logankoester"
   },
   "dependencies": {
-    "yeoman-generator": "~0.16.0",
-    "tangle-config": "~0.1.0"
+    "tangle-config": "~0.1.0",
+    "helmsman": "git://github.com/logankoester/node-helmsman#path-and-non-js",
+    "yeoman-generator": "~0.16.0"
   },
   "devDependencies": {
-    "mocha": "~1.17.1",
     "grunt": "~0.4.1",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-readme-generator": "~0.3.41",
-    "grunt-bump": "0.0.13",
-    "grunt-contrib-coffee": "~0.9.0",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-nodeunit": "~0.3.0",
+    "grunt-bump": "git://github.com/logankoester/grunt-bump#gpg-sign",
+    "grunt-readme-generator": "~0.3.41",
     "marked-man": "~0.1.1",
-    "grunt-contrib-copy": "~0.5.0",
-    "grunt-mocha-cli": "~1.5.0"
-  },
-  "peerDependencies": {
-    "yo": ">=1.0.0-rc.1"
+    "grunt-mocha-cli": "~1.5.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "chai": "~1.9.0"
   },
   "keywords": [
     "tangle",
-    "tangle-plugin",
-    "yeoman-generator"
+    "tangle-plugin"
   ],
-  "homepage": "https://github.com/tanglejs/new-plugin",
+  "homepage": "https://github.com/tanglejs/plugin",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tanglejs/new-plugin.git"
+    "url": "git://github.com/tanglejs/plugin.git"
   },
-  "bugs": "https://github.com/tanglejs/new-plugin/issues",
+  "bugs": "https://github.com/tanglejs/plugin/issues",
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/tanglejs/new-plugin/blob/master/LICENSE-MIT"
+      "url": "https://github.com/tanglejs/plugin/blob/master/LICENSE-MIT"
     }
   ],
   "engines": {
-    "node": ">=0.8.0",
-    "npm": ">=1.2.10"
+    "node": ">=0.10.0"
   }
 }

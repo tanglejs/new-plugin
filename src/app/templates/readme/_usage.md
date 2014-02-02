@@ -1,2 +1,0 @@
-    --option, -o [String] - An example option.
-    --help, -h - Display this message
