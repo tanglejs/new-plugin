@@ -1,7 +1,6 @@
-conf = require('tangle-config').getConf()
-
 module.exports.prompt =  ->
   done = @async()
+  conf = require('tangle-config').getConf()
 
   prompts = [
     type: 'input'

@@ -38,6 +38,13 @@ module.exports = class PluginGenerator extends yeoman.generators.Base
 PluginGenerator::pluginPrompts = require('./prompts/plugin').prompt
 PluginGenerator::authorPrompts = require('./prompts/author').prompt
 
+PluginGenerator::writePluginConfig = ->
+  tangleConfig = require 'tangle-config' 
+  pluginConfig = tangleConfig.getProject()
+  pluginConfig.set 'plugin', @plugin
+  pluginConfig.save (err) ->
+    console.error err if err
+
 PluginGenerator::copyFiles = ->
   @mkdir 'bin'
   @mkdir 'readme'
