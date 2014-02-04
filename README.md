@@ -1,6 +1,6 @@
-# tangle-new-plugin
+# tangle-plugin
 
-> A tangle plugin for creating new tangle plugins
+> A tangle plugin for managing tangle plugins
 
 [![Strider Build Status](http://ci.ldk.io/tanglejs/new-plugin/badge)](https://ci.ldk.io/tanglejs/new-plugin/)
 [![Travis Build Status](https://secure.travis-ci.org/tanglejs/new-plugin.png?branch=master)](http://travis-ci.org/tanglejs/new-plugin)
