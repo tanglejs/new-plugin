@@ -7,6 +7,7 @@
 #
 
 path = require 'path'
+tangleUtil = require 'tangle-util'
 
 module.exports = (grunt) ->
   #
@@ -78,19 +79,10 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-mocha-cli'
   grunt.loadNpmTasks 'grunt-bump'
 
-  grunt.registerTask 'marked-man', ->
-    done = @async()
-    grunt.util.spawn
-      cmd: './marked-man'
-      args: [path.join(__dirname, 'tangle-new-plugin.md')]
-      opts:
-        cwd: path.join(__dirname, 'node_modules', 'marked-man', 'bin')
-    , (error, result, code) ->
-      throw error if error
-      out = path.join __dirname, 'man', 'tangle-new-plugin.1'
-      grunt.file.write out, result.stdout
-      done()
+  tangleUtil.grunt.registerMarkedMan 'manpage-plugin', grunt,
+    path.join(__dirname, 'tangle-new-plugin.md'),
+    path.join(__dirname, 'man', 'tangle-new-plugin.1')
 
-  grunt.registerTask 'build', ['clean', 'readme_generator', 'marked-man']
+  grunt.registerTask 'build', ['clean', 'readme_generator', 'manpage-plugin']
   grunt.registerTask 'test', ['mochacli']
   grunt.registerTask 'default', ['build', 'test']
