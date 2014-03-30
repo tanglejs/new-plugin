@@ -40,14 +40,15 @@ module.exports = (grunt) ->
     readme_generator:
       help:
         options:
-          output: 'tangle-new-plugin.md'
+          output: 'tangle-plugin.md'
           table_of_contents: false
           generate_footer: false
           has_travis: false
-          package_title: 'tangle-new-plugin'
-          package_name: 'tangle-new-plugin'
+          package_title: 'tangle-plugin'
+          package_name: 'tangle-plugin'
         order:
-          'usage.md': 'Usage'
+          'usage.md': 'USAGE'
+
       readme:
         options:
           banner: 'banner.md'
@@ -80,8 +81,8 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-bump'
 
   tangleUtil.grunt.registerMarkedMan 'manpage-plugin', grunt,
-    path.join(__dirname, 'tangle-new-plugin.md'),
-    path.join(__dirname, 'man', 'tangle-new-plugin.1')
+    path.join(__dirname, 'tangle-plugin.md'),
+    path.join(__dirname, 'man', 'tangle-plugin.1')
 
   grunt.registerTask 'build', ['clean', 'readme_generator', 'manpage-plugin']
   grunt.registerTask 'test', ['mochacli']

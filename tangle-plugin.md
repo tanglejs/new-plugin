@@ -1,4 +1,4 @@
-# tangle-new-plugin 
+# tangle-plugin 
 
 > A tangle plugin for managing tangle plugins
 
