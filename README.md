@@ -16,46 +16,18 @@
 [tangle](https://github.com/tanglejs/tangle) is a set of tools
 for building web applications.
 
-`tangle-new-plugin` implements the `new-plugin` subcommand for
-[tangle](https://github.com/tanglejs/tangle).
+A TangleJS plugin is any npm module that includes 'tangle-plugin' in the
+keywords array of its package.json.
 
-It also happens to be a generator for [Yeoman](http://yeoman.io), though
-it does not follow the `generator-` naming convention.
-
-`tangle-new-plugin` runs interactively. It will ask you to answer some
-questions about the plugin you are creating, and then generate the necessary
-files in the current directory.
+Unlike Bower components or other npm modules, plugins are extensions to the
+TangleJS system, not to your projects. Most plugins provide some additional
+subcommand of `tangle` for you to work with.
 
 
 ## Usage
 
-### Global configuration
-
-If these config values are set, they will be used as defaults.
-
-    $ tangle config -k user:name -v "Your name"
-    $ tangle config -k user:email -v "you@example.com"
-    $ tangle config -k user:url -v "http://yourhomepage.example"
-    $ tangle config -k user:github:username -v 'yourUsername'
-
-### Creating your plugin
-
-    $ mkdir tangle-myplugin
-    $ cd tangle-myplugin
-
-    $ tangle new-plugin
-    # ...
-
-### Editing your plugin
-
-    $ npm link
-    $ grunt watch # Automatically rebuild & test on file change events
-
-### Publishing your plugin
-
-    $ npm publish
-    $ npm unlink
-    $ npm install tangle-myplugin -g
+    --option, -o [String] - An example option.
+    --help, -h - Display this message
 
 
 ## Contributing

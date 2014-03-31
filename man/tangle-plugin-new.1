@@ -1,0 +1,53 @@
+.TH "TANGLE\-PLUGIN\-NEW" "" "March 2014" "" ""
+.SH "NAME"
+\fBtangle-plugin-new\fR
+.QP
+.P
+Create a new plugin
+
+.
+.SH OVERVIEW
+.P
+This task runs interactively\. It will ask you to answer some
+questions about the plugin you are creating, and then generate the necessary
+files in the current directory\.
+.SH CONFIGURE
+.P
+If these global config values are set, they will be used as defaults\.
+.P
+.RS 2
+.EX
+$ tangle config \-k user:name \-v "Your name"
+$ tangle config \-k user:email \-v "you@example\.com"
+$ tangle config \-k user:url \-v "http://yourhomepage\.example"
+$ tangle config \-k user:github:username \-v \'yourUsername\'
+.EE
+.RE
+.SH CREATE
+.P
+.RS 2
+.EX
+$ mkdir tangle\-myplugin
+$ cd tangle\-myplugin
+
+$ tangle plugin new
+# \.\.\.
+.EE
+.RE
+.SH EDIT
+.P
+.RS 2
+.EX
+$ npm link
+$ grunt watch # Automatically rebuild & test on file change events
+.EE
+.RE
+.SH PUBLISH
+.P
+.RS 2
+.EX
+$ npm publish
+$ npm unlink
+$ npm install tangle\-myplugin \-g
+.EE
+.RE

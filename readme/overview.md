@@ -1,12 +1,9 @@
 [tangle](https://github.com/tanglejs/tangle) is a set of tools
 for building web applications.
 
-`tangle-new-plugin` implements the `new-plugin` subcommand for
-[tangle](https://github.com/tanglejs/tangle).
+A TangleJS plugin is any npm module that includes 'tangle-plugin' in the
+keywords array of its package.json.
 
-It also happens to be a generator for [Yeoman](http://yeoman.io), though
-it does not follow the `generator-` naming convention.
-
-`tangle-new-plugin` runs interactively. It will ask you to answer some
-questions about the plugin you are creating, and then generate the necessary
-files in the current directory.
+Unlike Bower components or other npm modules, plugins are extensions to the
+TangleJS system, not to your projects. Most plugins provide some additional
+subcommand of `tangle` for you to work with.

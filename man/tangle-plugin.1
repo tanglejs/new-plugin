@@ -6,44 +6,22 @@
 A tangle plugin for managing tangle plugins
 
 .
+.SH OVERVIEW
+.P
+tangle \fIhttps://github\.com/tanglejs/tangle\fR is a set of tools
+for building web applications\.
+.P
+A TangleJS plugin is any npm module that includes \'tangle\-plugin\' in the
+keywords array of its package\.json\.
+.P
+Unlike Bower components or other npm modules, plugins are extensions to the
+TangleJS system, not to your projects\. Most plugins provide some additional
+subcommand of \fBtangle\fR for you to work with\.
 .SH USAGE
-.SS Global configuration
-.P
-If these config values are set, they will be used as defaults\.
 .P
 .RS 2
 .EX
-$ tangle config \-k user:name \-v "Your name"
-$ tangle config \-k user:email \-v "you@example\.com"
-$ tangle config \-k user:url \-v "http://yourhomepage\.example"
-$ tangle config \-k user:github:username \-v \'yourUsername\'
-.EE
-.RE
-.SS Creating your plugin
-.P
-.RS 2
-.EX
-$ mkdir tangle\-myplugin
-$ cd tangle\-myplugin
-
-$ tangle new\-plugin
-# \.\.\.
-.EE
-.RE
-.SS Editing your plugin
-.P
-.RS 2
-.EX
-$ npm link
-$ grunt watch # Automatically rebuild & test on file change events
-.EE
-.RE
-.SS Publishing your plugin
-.P
-.RS 2
-.EX
-$ npm publish
-$ npm unlink
-$ npm install tangle\-myplugin \-g
+\-\-option, \-o [String] \- An example option\.
+\-\-help, \-h \- Display this message
 .EE
 .RE

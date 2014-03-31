@@ -47,7 +47,36 @@ module.exports = (grunt) ->
           package_title: 'tangle-plugin'
           package_name: 'tangle-plugin'
         order:
+          'overview.md': 'OVERVIEW'
           'usage.md': 'USAGE'
+
+      new:
+        options:
+          output: 'tangle-plugin-new.md'
+          table_of_contents: false
+          generate_footer: false
+          has_travis: false
+          package_title: 'tangle-plugin-new'
+          package_name: 'tangle-plugin-new'
+          package_desc: 'Create a new plugin'
+        order:
+          'subcommands/new/overview.md': 'OVERVIEW'
+          'subcommands/new/configure.md': 'CONFIGURE'
+          'subcommands/new/create.md': 'CREATE'
+          'subcommands/new/edit.md': 'EDIT'
+          'subcommands/new/publish.md': 'PUBLISH'
+
+      list:
+        options:
+          output: 'tangle-plugin-list.md'
+          table_of_contents: false
+          generate_footer: false
+          has_travis: false
+          package_title: 'tangle-plugin-list'
+          package_name: 'tangle-plugin-list'
+          package_desc: 'Display a table of all available plugins'
+        order:
+          'subcommands/list/overview.md': 'OVERVIEW'
 
       readme:
         options:
@@ -84,6 +113,21 @@ module.exports = (grunt) ->
     path.join(__dirname, 'tangle-plugin.md'),
     path.join(__dirname, 'man', 'tangle-plugin.1')
 
-  grunt.registerTask 'build', ['clean', 'readme_generator', 'manpage-plugin']
+  tangleUtil.grunt.registerMarkedMan 'manpage-plugin-new', grunt,
+    path.join(__dirname, 'tangle-plugin-new.md'),
+    path.join(__dirname, 'man', 'tangle-plugin-new.1')
+
+  tangleUtil.grunt.registerMarkedMan 'manpage-plugin-list', grunt,
+    path.join(__dirname, 'tangle-plugin-list.md'),
+    path.join(__dirname, 'man', 'tangle-plugin-list.1')
+
+  grunt.registerTask 'build', [
+    'clean'
+    'readme_generator'
+    'manpage-plugin'
+    'manpage-plugin-new'
+    'manpage-plugin-list'
+  ]
+
   grunt.registerTask 'test', ['mochacli']
   grunt.registerTask 'default', ['build', 'test']
