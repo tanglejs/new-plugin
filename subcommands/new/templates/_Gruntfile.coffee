@@ -7,6 +7,7 @@
 #
 
 path = require 'path'
+tangleUtil = require 'tangle-util'
 
 module.exports = (grunt) ->
   #
@@ -47,6 +48,7 @@ module.exports = (grunt) ->
           package_name: 'tangle-<%= plugin.subcommand %>'
         order:
           'usage.md': 'Usage'
+
       readme:
         options:
           banner: 'banner.md'
@@ -78,19 +80,10 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-mocha-cli'
   grunt.loadNpmTasks 'grunt-bump'
 
-  grunt.registerTask 'marked-man', ->
-    done = @async()
-    grunt.util.spawn
-      cmd: './marked-man'
-      args: [path.join(__dirname, 'tangle-<%= plugin.subcommand %>.md')]
-      opts:
-        cwd: path.join(__dirname, 'node_modules', 'marked-man', 'bin')
-    , (error, result, code) ->
-      throw error if error
-      out = path.join __dirname, 'man', 'tangle-<%= plugin.subcommand %>.1'
-      grunt.file.write out, result.stdout
-      done()
+  tangleUtil.grunt.registerMarkedMan 'manpage-<%= plugin.subcommand %>', grunt,
+    path.join(__dirname, 'tangle-<%= plugin.subcommand %>.md'),
+    path.join(__dirname, 'man', 'tangle-<%= plugin.subcommand %>.1')
 
-  grunt.registerTask 'build', ['clean', 'readme_generator', 'marked-man']
+  grunt.registerTask 'build', ['clean', 'readme_generator', 'manpage-<%= plugin.subcommand %>']
   grunt.registerTask 'test', ['mochacli']
   grunt.registerTask 'default', ['build', 'test']
