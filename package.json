@@ -10,6 +10,7 @@
   "bin": {
     "tangle-plugin": "bin/tangle-plugin.coffee",
     "tangle-plugin-new": "bin/tangle-plugin-new.coffee"
+    "tangle-plugin-list": "bin/tangle-plugin-list.coffee"
   },
   "scripts": {
     "test": "grunt test"
